@@ -1,4 +1,14 @@
 @import "tailwindcss";
-body{
-  background-color: black;
+
+@theme{
+  --color-primary:white;
+  --color-secondary:rgb(239, 238, 238);
+  --color-gray:#606060;
+  --color-heading:#0f0f0f
 }
+
+body{
+  background-color: var(--color-primary);
+  color: rgb(113, 114, 115);
+}
+
