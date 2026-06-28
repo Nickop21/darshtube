@@ -1,10 +1,12 @@
 import React from "react";
 import homeicon from "../../assets/home-icon.svg";
+import { useSelector } from "react-redux";
 
 const SidePannel = () => {
+    const isSidePannelOpen=useSelector((store)=>store.configue.sidepannelState)
   const list = [
     {
-      category: "",
+      category: "Homee",
       list: [
         {
           icon: "",
@@ -12,37 +14,27 @@ const SidePannel = () => {
         },
         {
           icon: "",
-          name: "Home",
+          name: "shorts",
         },
-        {
-          icon: "",
-          name: "Home",
-        },
-        {
-          icon: "",
-          name: "Home",
-        },
+      
       ],
     },
     {
-      category: "",
+      category: "fav",
       list: [
         {
           icon: homeicon,
-          name: "Home",
+          name: "dhuruv",
         },
         {
           icon: homeicon,
-          name: "Home",
+          name: "zakir",
         },
         {
           icon: "",
-          name: "Home",
+          name: "akshya",
         },
-        {
-          icon: "",
-          name: "Home",
-        },
+       
       ],
     },
     {
@@ -50,54 +42,34 @@ const SidePannel = () => {
       list: [
         {
           icon: "",
-          name: "Home",
+          name: "history",
         },
         {
           icon: "",
-          name: "Home",
+          name: "playlist",
         },
         {
           icon: "",
-          name: "Home",
+          name: "watch later",
         },
         {
           icon: "",
-          name: "Home",
+          name: "liked videos",
         },
       ],
     },
-    {
-      category: "watchLater",
-      list: [
-        {
-          icon: "",
-          name: "Home",
-        },
-        {
-          icon: "",
-          name: "Home",
-        },
-        {
-          icon: "",
-          name: "Home",
-        },
-        {
-          icon: "",
-          name: "Home",
-        },
-      ],
-    },
+   
   ];
   return (
-    <div className="bg-secondary w-58 h-full fixed left-0 mt-16">
-      {list.map((data) => (
-        <div className="p-4 border-b-2 border-gray ">
+    <div className={`bg-secondary w-58 h-full fixed  mt-16 ${isSidePannelOpen ? "left-0" : "-left-60"} transition-all duration-300 ease-in-out`}>
+      {list.map((data, index) => (
+        <div className="p-4 border-b-2 border-gray " key={data?.category}>
           {data.category && (
             <h1 className="font-extrabold text-black">{data.category}</h1>
           )}
-          <ul className=" text-black">
+          <ul className=" text-black" >
             {data?.list.map((listitem) => (
-              <li className=" flex items-center p-2 hover:bg-gray rounded-xl gap-6 pl-4 font-bold">
+              <li className=" flex items-center p-2 hover:bg-gray rounded-xl gap-6 pl-4 font-bold" key={listitem.name}>
                 {listitem.icon ? (
                   <img
                     src={listitem.icon}

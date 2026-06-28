@@ -2,12 +2,19 @@ import React from "react";
 import youtubelogo from "../assets/youtube-logo.svg";
 import menulogo from "../assets/menu-symbol.svg";
 import SearchBar from "./SearchBar";
+import { useDispatch, useSelector } from "react-redux";
+import { sidePannelconf } from "../store/configueSlice";
 
 const Header = () => {
+    const dispatch=useDispatch()
+    // const isSidePannelOpen=useSelector((store)=>store.configue.sidepannelState)
+    function sidePannelToggle(){
+        dispatch(sidePannelconf())
+    }
   return (
     <div className="bg-white w-full p-4 fixed  z-50 flex justify-between items-center">
       <div className="flex gap-6 items-center ">
-        <img src={menulogo} alt="" className="w-5" />
+        <img src={menulogo} alt="" className="w-5" onClick={()=> sidePannelToggle()}/>
         <img src={youtubelogo} alt="" />
       </div>
 

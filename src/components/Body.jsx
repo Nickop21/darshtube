@@ -4,7 +4,8 @@ import SidePannel from './sidePanel/SidePannel'
 import HomePageMainContainer from './HomePageMainContainer'
 
 const Body = () => {
-    const 
+
+     
   return (
     <div>
         <Header/>

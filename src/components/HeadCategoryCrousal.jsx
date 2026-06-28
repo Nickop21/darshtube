@@ -8,7 +8,7 @@ const HeadCategoryCrousal = () => {
         {
           categoryData?.map((data)=>(
 
-            <span className='p-2 bg-gray-100 text-black/50 font-bold text-sm rounded whitespace-nowrap'>{data}</span>
+            <span className='p-2 bg-gray-100 text-black/50 font-bold text-sm rounded whitespace-nowrap' key={data}>{data}</span>
           ))
         }
 
