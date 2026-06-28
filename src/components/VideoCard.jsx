@@ -3,11 +3,11 @@ import youtubelogo from "../assets/youtube-logo.svg";
 
 const VideoCard = () => {
   return (
-    <div className=" w-[44%] xl:w-[30%] ml-4 mb-12 ">
+    <div className=" w-[44%] xl:w-[30%] ml-4 mb-12 shadow-2xl shadow-gray-300 ">
       <img
         src="https://i.ytimg.com/vi/MZWzMlVENPE/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLDWkEeeGUdBsNd-Vt2fOSqNGqwEww"
         alt=""
-        className="h-38 md:h-54 2xl:h-88 w-full rounded-2xl "
+        className="h-38 md:h-54 2xl:h-88 w-full rounded-xl "
       />
       <div className="text-secondary flex pt-2">
         {/* <img src={youtubelogo} alt="" width={10} height={10} /> */}
@@ -27,7 +27,7 @@ const VideoCard = () => {
       </div>
     </div>
   );
-  
+
 };
 
 export default VideoCard;
