@@ -61,7 +61,7 @@ const SidePannel = () => {
    
   ];
   return (
-    <div className={`bg-secondary w-58 h-full fixed  mt-16 ${isSidePannelOpen ? "left-0" : "-left-60"} transition-all duration-300 ease-in-out`}>
+    <div className={`bg-secondary w-58 xl:w-68 h-full fixed  mt-16 ${isSidePannelOpen ? "left-0" : "-left-60 xl:-left-648"} transition-all duration-300 ease-in-out`}>
       {list.map((data, index) => (
         <div className="p-4 border-b-2 border-gray " key={data?.category}>
           {data.category && (

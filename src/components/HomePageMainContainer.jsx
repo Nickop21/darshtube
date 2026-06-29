@@ -12,24 +12,27 @@ const HomePageMainContainer = () => {
   const youtubeStoreApiData = useSelector(
     (store) => store.youtubeData.youtubeData,
   );
+  useyoutubeData();
   return (
     <div
-      className={` pt-20 ${isSidePannelOpen ? "pl-64" : "pl-2"} transition-all duration-300 ease-in-out`}
+      className={` ${isSidePannelOpen ? "pl-68 xl:pl-78" : "pl-8"} transition-all duration-300 ease-in-out`}
     >
       <HeadCategoryCrousal />
 
-       {
-      youtubeStoreApiData ?
-    
-      <div className="flex flex-wrap justify-items-normal w-full pt-3">
-        {youtubeStoreApiData?.map((data, index) => (
-          <div className="w-[44%] xl:w-[30%] flex flex-wrap justify-items-normal " key={data.id}>
-
-            <VideoCard data={data} />
-          </div>
-        ))}
-      </div> :<></>
-    }
+      {youtubeStoreApiData ? (
+        <div className="flex flex-wrap justify-items-normal w-full pt-3">
+          {youtubeStoreApiData?.map((data, index) => (
+            <div
+              className="w-[44%] xl:w-[32%] flex flex-wrap justify-items-normal "
+              key={data.id}
+            >
+              <VideoCard data={data} />
+            </div>
+          ))}
+        </div>
+      ) : (
+        <></>
+      )}
     </div>
   );
 };
